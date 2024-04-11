@@ -10,7 +10,9 @@ import java.io.*;
 public class UserConfig implements Serializable {
     @Serial
     private static final long serialVersionUID = 6529685098267757690L;
-    public final String name;
+    private final String name;
+
+    public String getName() { return name; }
 
     public UserConfig(String name) {
         this.name = name;

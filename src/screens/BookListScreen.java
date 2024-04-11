@@ -21,8 +21,8 @@ public class BookListScreen extends Screen {
         // get last month books
         ArrayList<String > books = new ArrayList<>();
         for (Book book : Book.getAllBooks()) {
-            if (book.date.getMonth() != Helpers.getCurrentMonth()) continue;
-            books.add(book.title);
+            if (book.getDate().getMonth() != Helpers.getCurrentMonth()) continue;
+            books.add(book.getTitle());
         }
 
         Scanner scanner = new Scanner(System.in);

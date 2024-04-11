@@ -24,7 +24,16 @@ public class Main {
             new InitAppScreen().showScreen();
         }
 
+        Main.promptStartScreen(STR."Welkom, \{UserConfig.read().getName()}.");
+    }
+
+    public static void promptStartScreen(String notification) {
         Helpers.clearScreen();
-        new StartScreen(STR."Welkom, \{UserConfig.read().name}.").showScreen(); // start app
+
+        try {
+            new StartScreen(notification).showScreen();
+        } catch (Exception error) {
+            Main.promptStartScreen("Sorry, er is iets onverwacht gegaan.");
+        }
     }
 }

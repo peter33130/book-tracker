@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class List {
     private final Scanner scanner;
-    public String title;
-    public String[] items;
-    public String sub;
+    private String title;
+    private final String[] items;
+    private final String sub;
 
     public List(Scanner scanner, String[] items, String sub) {
         this.scanner = scanner;

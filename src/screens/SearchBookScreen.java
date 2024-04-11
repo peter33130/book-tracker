@@ -27,7 +27,7 @@ public class SearchBookScreen extends Screen {
         // print list
         Helpers.clearScreen();
         ArrayList<String> titles = new ArrayList<>();
-        for (Book result : Book.searchBook(query)) titles.add(result.title);
+        for (Book result : Book.searchBook(query)) titles.add(result.getTitle());
         int choice = new List(scanner, "Resultaten", titles.toArray(new String[0]), "Maak uw keuze: ").showList();
         Helpers.clearScreen();
         Book.getBookByTitle(titles.get(choice - 1)).printBook();

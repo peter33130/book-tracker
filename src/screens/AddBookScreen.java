@@ -14,7 +14,6 @@ public class AddBookScreen extends Screen {
     public void showScreen() {
         System.out.println("[\uD83D\uDCD5 Boek toevoegen]");
 
-
         Scanner scanner = new Scanner(System.in);
         scanner.useDelimiter(System.lineSeparator()); // fix bug where space results in error
         System.out.print("Naam: ");
@@ -23,11 +22,11 @@ public class AddBookScreen extends Screen {
         // check if book already exist
         for (Book book : Book.getAllBooks())
             if (
-                    book.title.equalsIgnoreCase(name)
-                    && Helpers.getCurrentMonth() == book.date.getMonth()
+                    book.getTitle().equalsIgnoreCase(name)
+                    && Helpers.getCurrentMonth() == book.getDate().getMonth()
             ) {
                 Helpers.clearScreen();
-                new StartScreen("Dit boek bestaat al.").showScreen();
+                new ModifyBookScreen(name).showScreen();
             }
 
         System.out.print("Auteur: ");
@@ -49,7 +48,7 @@ public class AddBookScreen extends Screen {
         new Book(name, author, rating, notes).saveBook(); // save book
 
         Helpers.clearScreen();
-        new StartScreen(STR."'\{name} successvol toegevoegd.'").showScreen();
+        new StartScreen(STR."'\{name}' successvol toegevoegd.").showScreen();
     }
 
     public static boolean validateRating(int rating) {

@@ -19,7 +19,12 @@ public class StartScreen extends Screen {
         Scanner scanner = new Scanner(System.in);
         int choice = new List(
                 scanner,
-                new String[]{"\uD83D\uDCD5 Boek toevoegen", "\uD83D\uDCDA Boekenlijst", "\uD83D\uDD0D Zoeken", "⚙️  Instellingen"},
+                new String[]{
+                        "\uD83D\uDCD5 Boek toevoegen of aanpassen",
+                        "\uD83D\uDCDA Boekenlijst",
+                        "\uD83D\uDD0D Zoeken",
+                        "⚙️  Instellingen"
+                },
                 "Type het nummer van het scherm waar u naartoe wilt gaan:"
         ).showList();
 

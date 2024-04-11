@@ -8,12 +8,12 @@ import java.util.*;
 public class Book implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
-    public String slug;
-    public String title;
-    public String author;
-    public int rating;
-    public String notes;
-    public final Date date = new Date();
+    private String slug;
+    private String title;
+    private String author;
+    private int rating;
+    private String notes;
+    private final Date date = new Date();
 
     public Book(String title, String author, int rating) {
         this.slug = createSlug(title);
@@ -27,6 +27,32 @@ public class Book implements Serializable {
         this(title, author, rating);
         this.notes = notes;
     }
+
+    public String getSlug() { return slug; }
+
+    public void setSlug(String slug) { this.slug = slug; }
+
+    public String getTitle() { return title; }
+
+    public void setTitle(String title) { this.title = title; }
+
+    public String getAuthor() { return author; }
+
+    public void setAuthor(String author) { this.author = author; }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public String getNotes() { return notes; }
+
+    public void setNotes(String notes) { this.notes = notes; }
+
+    public Date getDate() { return date; }
 
     /**
      * Get a book directly by slug
